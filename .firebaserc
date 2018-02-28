@@ -1,5 +1,5 @@
 {
   "projects": {
-    "default": "wunderlist-react-app"
+    "default": "react-firebase-todo-app"
   }
 }
