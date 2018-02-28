@@ -1,0 +1,2 @@
+export const ACTION_NAME = 'ACTION_NAME';
+export const ANOTHER_ACTION_NAME = 'ANOTHER_ACTION_NAME';
