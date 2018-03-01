@@ -2,9 +2,8 @@ import { getSectionsDB, addSection } from '../../_config/firebase';
 import actionType from '../constants/';
 
 export const loadSections = () => (dispatch) => {
-  dispatch({
-    type: actionType.LOAD_SECTIONS_REQUEST,
-  });
+  dispatch({ type: actionType.LOAD_SECTIONS_REQUEST });
+
   getSectionsDB()
     .then((sections) => {
       dispatch({
@@ -24,7 +23,8 @@ export const createSection = name => (dispatch) => {
   dispatch({ type: actionType.ADD_SECTION_REQUEST });
 
   addSection(name)
-    .then((res) => {
+    // .then((res) => { // this was in the tutorial but don't think it's needed
+    .then(() => {
       loadSections()(dispatch); // refresh the data to keep up-to-date
       dispatch({
         type: actionType.ADD_SECTION_SUCCESS,
