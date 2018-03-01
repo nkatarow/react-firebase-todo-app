@@ -8,7 +8,6 @@ import Routes from './routes';
 const App = () => {
   firebaseInit();
   this.store = configureStore();
-  console.log(this.store.getState());
 
   return (
     <Provider store={this.store}>

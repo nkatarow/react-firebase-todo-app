@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 
 class SectionList extends PureComponent {
   render() {
-    Object.entries(this.props.sections).forEach((section) => {
-      const [key, value] = section;
-      console.log(`key: ${key}`);
-      console.log(value);
-    });
-
     return (
       <ul>
-        {/* Need to output each section here */}
-        <li>Test</li>
+        { Object.keys(this.props.sections).map(key => (
+          <li key={key}>
+            {this.props.sections[key].name}
+          </li>
+        ))}
       </ul>
     );
   }

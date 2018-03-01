@@ -13,6 +13,7 @@ class BaseApp extends PureComponent {
   onSubmit = (event) => {
     event.preventDefault();
     this.props.createSection(this.sectionName.value);
+    this.sectionName.value = null;
   }
 
   render() {
@@ -31,7 +32,11 @@ class BaseApp extends PureComponent {
 BaseApp.propTypes = {
   createSection: PropTypes.func.isRequired,
   loadSections: PropTypes.func.isRequired,
-  // sections: PropTypes.node.isRequired,
+  sections: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    timestamp: PropTypes.number,
+  }).isRequired,
 };
 
 const mapStateToProps = state => ({
