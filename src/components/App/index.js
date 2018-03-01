@@ -1,13 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import firebaseInit from '../../_config/firebase';
+import { firebaseInit } from '../../_config/firebase';
 import configureStore from '../../_redux/configureStore';
 import Routes from './routes';
 
 const App = () => {
   firebaseInit();
   this.store = configureStore();
+  console.log(this.store.getState());
 
   return (
     <Provider store={this.store}>

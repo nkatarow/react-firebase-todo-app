@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch, withRouter } from 'react-router-dom';
-import ListLists from '../ListLists';
+import BaseApp from './App';
 
 const Routes = withRouter(({ location }) => (
   <Switch location={location}>
-    <Route exact path="/" component={ListLists} />
+    <Route exact path="/" component={BaseApp} />
   </Switch>
 ));
 

@@ -1,13 +1,14 @@
+import actionType from '../constants';
+
 const initialState = {
-  sections: [],
+  sections: {},
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'ACTION_NAME':
+    case actionType.LOAD_SECTIONS_SUCCESS:
       return {
-        ...state, // make a copy of previous state first before mutating
-        // stuff you want to update here
+        sections: action.payload,
       };
 
     default:
