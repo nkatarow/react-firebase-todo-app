@@ -1,63 +1,74 @@
 ## DEVELOPER NOTES
-- Loosely based on the following tutorial series but updating to use ES6 methods
+* Loosely based on the following tutorial series but updating to use ES6 methods
   - [Medium: Create realtime todo list with Firebase, React.JS, and Redux](https://medium.com/@taweesoft/chapter-1-create-react-app-and-setup-firebase-real-time-todo-list-with-firebase-react-js-f03a904097c7)
 
+## BUILD PROCESS
+1. Pull most recent from master
+2. Create branch locally
+3. Run `npm start` in console - develop new feature
+4. Stop npm, run `npm run build` or `yarn build` (if you have yarn)
+5. Git add, commit, and push to branch in repository
+6. Go to Bitbucket in browser, submit pull request to other dev(s)
+7. After pull request is approved, checkout master and pull
+8. Run `firebase deploy` (need to have firebase cli installed globally)
+
+## Create React App Documentation
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Below you will find some information on how to perform common tasks.<br>
+Below you will find some information on how to perform common tasks.
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Table of Contents
 
-- [Updating to New Releases](#updating-to-new-releases)
-- [Sending Feedback](#sending-feedback)
-- [Folder Structure](#folder-structure)
-- [Available Scripts](#available-scripts)
+* [Updating to New Releases](#updating-to-new-releases)
+* [Sending Feedback](#sending-feedback)
+* [Folder Structure](#folder-structure)
+* [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
   - [npm run eject](#npm-run-eject)
-- [Supported Browsers](#supported-browsers)
-- [Supported Language Features and Polyfills](#supported-language-features-and-polyfills)
-- [Syntax Highlighting in the Editor](#syntax-highlighting-in-the-editor)
-- [Displaying Lint Output in the Editor](#displaying-lint-output-in-the-editor)
-- [Debugging in the Editor](#debugging-in-the-editor)
-- [Formatting Code Automatically](#formatting-code-automatically)
-- [Changing the Page `<title>`](#changing-the-page-title)
-- [Installing a Dependency](#installing-a-dependency)
-- [Importing a Component](#importing-a-component)
-- [Code Splitting](#code-splitting)
-- [Adding a Stylesheet](#adding-a-stylesheet)
-- [Post-Processing CSS](#post-processing-css)
-- [Adding a CSS Preprocessor (Sass, Less etc.)](#adding-a-css-preprocessor-sass-less-etc)
-- [Adding Images, Fonts, and Files](#adding-images-fonts-and-files)
-- [Using the `public` Folder](#using-the-public-folder)
+* [Supported Browsers](#supported-browsers)
+* [Supported Language Features and Polyfills](#supported-language-features-and-polyfills)
+* [Syntax Highlighting in the Editor](#syntax-highlighting-in-the-editor)
+* [Displaying Lint Output in the Editor](#displaying-lint-output-in-the-editor)
+* [Debugging in the Editor](#debugging-in-the-editor)
+* [Formatting Code Automatically](#formatting-code-automatically)
+* [Changing the Page `<title>`](#changing-the-page-title)
+* [Installing a Dependency](#installing-a-dependency)
+* [Importing a Component](#importing-a-component)
+* [Code Splitting](#code-splitting)
+* [Adding a Stylesheet](#adding-a-stylesheet)
+* [Post-Processing CSS](#post-processing-css)
+* [Adding a CSS Preprocessor (Sass, Less etc.)](#adding-a-css-preprocessor-sass-less-etc)
+* [Adding Images, Fonts, and Files](#adding-images-fonts-and-files)
+* [Using the `public` Folder](#using-the-public-folder)
   - [Changing the HTML](#changing-the-html)
   - [Adding Assets Outside of the Module System](#adding-assets-outside-of-the-module-system)
   - [When to Use the `public` Folder](#when-to-use-the-public-folder)
-- [Using Global Variables](#using-global-variables)
-- [Adding Bootstrap](#adding-bootstrap)
+* [Using Global Variables](#using-global-variables)
+* [Adding Bootstrap](#adding-bootstrap)
   - [Using a Custom Theme](#using-a-custom-theme)
-- [Adding Flow](#adding-flow)
-- [Adding a Router](#adding-a-router)
-- [Adding Custom Environment Variables](#adding-custom-environment-variables)
+* [Adding Flow](#adding-flow)
+* [Adding a Router](#adding-a-router)
+* [Adding Custom Environment Variables](#adding-custom-environment-variables)
   - [Referencing Environment Variables in the HTML](#referencing-environment-variables-in-the-html)
   - [Adding Temporary Environment Variables In Your Shell](#adding-temporary-environment-variables-in-your-shell)
   - [Adding Development Environment Variables In `.env`](#adding-development-environment-variables-in-env)
-- [Can I Use Decorators?](#can-i-use-decorators)
-- [Fetching Data with AJAX Requests](#fetching-data-with-ajax-requests)
-- [Integrating with an API Backend](#integrating-with-an-api-backend)
+* [Can I Use Decorators?](#can-i-use-decorators)
+* [Fetching Data with AJAX Requests](#fetching-data-with-ajax-requests)
+* [Integrating with an API Backend](#integrating-with-an-api-backend)
   - [Node](#node)
   - [Ruby on Rails](#ruby-on-rails)
-- [Proxying API Requests in Development](#proxying-api-requests-in-development)
+* [Proxying API Requests in Development](#proxying-api-requests-in-development)
   - ["Invalid Host Header" Errors After Configuring Proxy](#invalid-host-header-errors-after-configuring-proxy)
   - [Configuring the Proxy Manually](#configuring-the-proxy-manually)
   - [Configuring a WebSocket Proxy](#configuring-a-websocket-proxy)
-- [Using HTTPS in Development](#using-https-in-development)
-- [Generating Dynamic `<meta>` Tags on the Server](#generating-dynamic-meta-tags-on-the-server)
-- [Pre-Rendering into Static HTML Files](#pre-rendering-into-static-html-files)
-- [Injecting Data from the Server into the Page](#injecting-data-from-the-server-into-the-page)
-- [Running Tests](#running-tests)
+* [Using HTTPS in Development](#using-https-in-development)
+* [Generating Dynamic `<meta>` Tags on the Server](#generating-dynamic-meta-tags-on-the-server)
+* [Pre-Rendering into Static HTML Files](#pre-rendering-into-static-html-files)
+* [Injecting Data from the Server into the Page](#injecting-data-from-the-server-into-the-page)
+* [Running Tests](#running-tests)
   - [Filename Conventions](#filename-conventions)
   - [Command Line Interface](#command-line-interface)
   - [Version Control Integration](#version-control-integration)
@@ -71,19 +82,19 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [Disabling jsdom](#disabling-jsdom)
   - [Snapshot Testing](#snapshot-testing)
   - [Editor Integration](#editor-integration)
-- [Debugging Tests](#debugging-tests)
+* [Debugging Tests](#debugging-tests)
   - [Debugging Tests in Chrome](#debugging-tests-in-chrome)
   - [Debugging Tests in Visual Studio Code](#debugging-tests-in-visual-studio-code)
-- [Developing Components in Isolation](#developing-components-in-isolation)
+* [Developing Components in Isolation](#developing-components-in-isolation)
   - [Getting Started with Storybook](#getting-started-with-storybook)
   - [Getting Started with Styleguidist](#getting-started-with-styleguidist)
-- [Publishing Components to npm](#publishing-components-to-npm)
-- [Making a Progressive Web App](#making-a-progressive-web-app)
+* [Publishing Components to npm](#publishing-components-to-npm)
+* [Making a Progressive Web App](#making-a-progressive-web-app)
   - [Opting Out of Caching](#opting-out-of-caching)
   - [Offline-First Considerations](#offline-first-considerations)
   - [Progressive Web App Metadata](#progressive-web-app-metadata)
-- [Analyzing the Bundle Size](#analyzing-the-bundle-size)
-- [Deployment](#deployment)
+* [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+* [Deployment](#deployment)
   - [Static Server](#static-server)
   - [Other Solutions](#other-solutions)
   - [Serving Apps with Client-Side Routing](#serving-apps-with-client-side-routing)
@@ -96,16 +107,16 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [Now](#now)
   - [S3 and CloudFront](#s3-and-cloudfront)
   - [Surge](#surge)
-- [Advanced Configuration](#advanced-configuration)
-- [Troubleshooting](#troubleshooting)
+* [Advanced Configuration](#advanced-configuration)
+* [Troubleshooting](#troubleshooting)
   - [`npm start` doesn’t detect changes](#npm-start-doesnt-detect-changes)
   - [`npm test` hangs on macOS Sierra](#npm-test-hangs-on-macos-sierra)
   - [`npm run build` exits too early](#npm-run-build-exits-too-early)
   - [`npm run build` fails on Heroku](#npm-run-build-fails-on-heroku)
   - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
   - [Moment.js locales are missing](#momentjs-locales-are-missing)
-- [Alternatives to Ejecting](#alternatives-to-ejecting)
-- [Something Missing?](#something-missing)
+* [Alternatives to Ejecting](#alternatives-to-ejecting)
+* [Something Missing?](#something-missing)
 
 ## Updating to New Releases
 
@@ -618,8 +629,8 @@ Then we can change `start` and `build` scripts to include the CSS preprocessor c
    "scripts": {
      "build-css": "node-sass-chokidar src/ -o src/",
      "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
--    "start": "react-scripts start",
--    "build": "react-scripts build",
+*    "start": "react-scripts start",
+*    "build": "react-scripts build",
 +    "start-js": "react-scripts start",
 +    "start": "npm-run-all -p watch-css start-js",
 +    "build-js": "react-scripts build",
@@ -635,11 +646,11 @@ Now running `npm start` and `npm run build` also builds Sass files.
 
 `node-sass` has been reported as having the following issues:
 
-- `node-sass --watch` has been reported to have *performance issues* in certain conditions when used in a virtual machine or with docker.
+* `node-sass --watch` has been reported to have *performance issues* in certain conditions when used in a virtual machine or with docker.
 
-- Infinite styles compiling [#1939](https://github.com/facebookincubator/create-react-app/issues/1939)
+* Infinite styles compiling [#1939](https://github.com/facebookincubator/create-react-app/issues/1939)
 
-- `node-sass` has been reported as having issues with detecting new files in a directory [#1891](https://github.com/sass/node-sass/issues/1891)
+* `node-sass` has been reported as having issues with detecting new files in a directory [#1891](https://github.com/sass/node-sass/issues/1891)
 
  `node-sass-chokidar` is used here as it addresses these issues.
 
@@ -1480,7 +1491,7 @@ Similarly, `fit()` lets you focus on a specific test without running any other t
 ### Coverage Reporting
 
 Jest has an integrated coverage reporter that works well with ES6 and requires no configuration.<br>
-Run `npm test -- --coverage` (note extra `--` in the middle) to include a coverage report like this:
+Run `npm test -* --coverage` (note extra `--` in the middle) to include a coverage report like this:
 
 ![coverage report](http://i.imgur.com/5bFhnTS.png)
 
@@ -1491,10 +1502,10 @@ Note that tests run much slower with coverage so it is recommended to run it sep
 The default Jest coverage configuration can be overriden by adding any of the following supported keys to a Jest config in your package.json.
 
 Supported overrides:
- - [`collectCoverageFrom`](https://facebook.github.io/jest/docs/en/configuration.html#collectcoveragefrom-array)
- - [`coverageReporters`](https://facebook.github.io/jest/docs/en/configuration.html#coveragereporters-array-string)
- - [`coverageThreshold`](https://facebook.github.io/jest/docs/en/configuration.html#coveragethreshold-object)
- - [`snapshotSerializers`](https://facebook.github.io/jest/docs/en/configuration.html#snapshotserializers-array-string)
+ * [`collectCoverageFrom`](https://facebook.github.io/jest/docs/en/configuration.html#collectcoveragefrom-array)
+ * [`coverageReporters`](https://facebook.github.io/jest/docs/en/configuration.html#coveragereporters-array-string)
+ * [`coverageThreshold`](https://facebook.github.io/jest/docs/en/configuration.html#coveragethreshold-object)
+ * [`snapshotSerializers`](https://facebook.github.io/jest/docs/en/configuration.html#snapshotserializers-array-string)
 
 Example package.json:
 
@@ -1608,7 +1619,7 @@ If you know that none of your tests depend on [jsdom](https://github.com/tmpvar/
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
--   "test": "react-scripts test --env=jsdom"
+*   "test": "react-scripts test --env=jsdom"
 +   "test": "react-scripts test"
 ```
 
@@ -2184,7 +2195,7 @@ additional modifications:
 ```diff
   "scripts": {
     "predeploy": "npm run build",
--   "deploy": "gh-pages -d build",
+*   "deploy": "gh-pages -d build",
 +   "deploy": "gh-pages -b master -d build",
 ```
 
@@ -2322,7 +2333,7 @@ Note that in order to support routers that use HTML5 `pushState` API, you may wa
 You can adjust various development and production settings by setting environment variables in your shell or with [.env](#adding-development-environment-variables-in-env).
 
 Variable | Development | Production | Usage
-:--- | :---: | :---: | :---
+:--* | :---: | :---: | :---
 BROWSER | :white_check_mark: | :x: | By default, Create React App will open the default system browser, favoring Chrome on macOS. Specify a [browser](https://github.com/sindresorhus/opn#app) to override this behavior, or set it to `none` to disable it completely. If you need to customize the way the browser is launched, you can specify a node script instead. Any arguments passed to `npm start` will also be passed to this script, and the url where your app is served will be the last argument. Your script's file name must have the `.js` extension.
 HOST | :white_check_mark: | :x: | By default, the development web server binds to `localhost`. You may use this variable to specify a different host.
 PORT | :white_check_mark: | :x: | By default, the development web server will attempt to listen on port 3000 or prompt you to attempt the next available port. You may use this variable to specify a different port.
@@ -2421,7 +2432,7 @@ Some third-party packages don't compile their code to ES5 before publishing to n
 To resolve this:
 
 1. Open an issue on the dependency's issue tracker and ask that the package be published pre-compiled.
-  * Note: Create React App can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
+  - Note: Create React App can consume both CommonJS and ES modules. For Node.js compatibility, it is recommended that the main entry point is CommonJS. However, they can optionally provide an ES module entry point with the `module` field in `package.json`. Note that **even if a library provides an ES Modules version, it should still precompile other ES6 features to ES5 if it intends to support older browsers**.
 
 2. Fork the package and publish a corrected version yourself.
 
